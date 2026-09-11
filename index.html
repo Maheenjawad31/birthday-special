@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&amp;family=Inter:wght@300;400;500&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="A private exhibition made for Ali." name="description"/>
+<title>A Museum Made For You</title>
+<link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+
+    <audio id="birthdayMusic" loop>
+        <source src="audio/birthday-song.mp3" type="audio/mpeg">
+    </audio>
+<!-- =========================================================
+         APPLICATION
+         ========================================================= -->
+<div id="app">
+<!-- =========================================================
+     SECRET BIRTHDAY LOCK SCREEN — ADDED FEATURE ONLY
+     ========================================================= -->
+<section
+    aria-label="Private birthday surprise"
+    class="secret-lock"
+    id="secret-lock-screen"
+>
+    <div class="secret-lock__glow secret-lock__glow--one"></div>
+    <div class="secret-lock__glow secret-lock__glow--two"></div>
+
+    <div aria-hidden="true" class="secret-lock__sparkles">
+        <span>✦</span><span>·</span><span>♡</span><span>✧</span>
+        <span>·</span><span>✦</span><span>♡</span><span>·</span>
+    </div>
+
+    <div class="secret-lock__card">
+        <div aria-hidden="true" class="secret-lock__lock-wrap">
+            <div class="secret-lock__lock">
+                <span class="secret-lock__shackle"></span>
+                <span class="secret-lock__body">
+                    <span class="secret-lock__keyhole"></span>
+                </span>
+            </div>
+        </div>
+
+        <p class="secret-lock__eyebrow">A PRIVATE LITTLE SURPRISE</p>
+        <h1 class="secret-lock__title">A little surprise is waiting for you... ♡</h1>
+        <p class="secret-lock__message">But first, enter the secret code.</p>
+
+        <form class="secret-lock__form" id="secret-lock-form" novalidate>
+            <label class="visually-hidden" for="secret-lock-code">Secret code</label>
+            <input
+                autocomplete="off"
+                class="secret-lock__input"
+                id="secret-lock-code"
+                inputmode="numeric"
+                maxlength="32"
+                name="secret-code"
+                placeholder="Enter the secret code"
+                type="password"
+            />
+            <button class="secret-lock__button" id="secret-unlock" type="submit">
+                <span>UNLOCK</span>
+                <span aria-hidden="true">♡</span>
+            </button>
+        </form>
+
+        <p aria-live="polite" class="secret-lock__error" id="secret-lock-error"></p>
+    </div>
+</section>
+
+<!-- =====================================================
+             AMBIENT AUDIO
+             ===================================================== -->
+<audio id="ambient-audio" loop="" preload="auto" src="assets/audio/ambient.mp3"></audio>
+<button aria-label="Toggle ambient audio" aria-pressed="false" class="audio-control" id="audio-toggle" type="button">
+<span aria-hidden="true" class="audio-control__icon">◌</span>
+<span class="audio-control__label">SOUND OFF</span>
+</button>
+<!-- =====================================================
+             EXHIBIT INDICATOR
+             ===================================================== -->
+<div aria-label="Current exhibit" class="exhibit-indicator" id="exhibit-indicator">
+<span class="exhibit-indicator__current">01</span>
+<span class="exhibit-indicator__divider">/</span>
+<span class="exhibit-indicator__total">08</span>
+</div>
+<!-- =====================================================
+             EXHIBITION
+             ===================================================== -->
+<main id="exhibition">
+<!-- =================================================
+                 ROOM 01 — THE MUSEUM DOORS
+                 ================================================= -->
+<section aria-labelledby="room-01-title" class="room room--opening is-active" data-room="01" id="room-01">
+<div class="room__background"></div>
+<div class="opening__content">
+<p class="eyebrow">
+                        PRIVATE EXHIBITION
+                    </p>
+<p class="opening__admission">
+                        Admission: One person only.
+                    </p>
+<div class="opening__rule"></div>
+<p class="opening__intro">
+                        A collection of things<br/>
+                        I wanted you to see.
+                    </p>
+<h1 class="opening__title" id="room-01-title">
+                        HAPPY BIRTHDAY, ALI
+                        <span aria-hidden="true" class="heart-mark">♡</span>
+</h1>
+<button class="exhibition-button" data-next-room="02" id="enter-exhibition" type="button">
+<span>ENTER EXHIBITION</span>
+<span aria-hidden="true">→</span>
+</button>
+</div>
+</section>
+<!-- =================================================
+     ROOM 02 — THE SUBJECT
+     ================================================= -->
+     <section
+     aria-hidden="true"
+     aria-labelledby="room-02-title"
+     class="room room--gallery subject-room"
+     data-room="02"
+     id="room-02"
+ >
+ 
+     <div class="subject-bg"></div>
+     <div class="subject-grain"></div>
+ 
+     <!-- =================================================
+          HEADER
+          ================================================= -->
+     <header class="subject-heading">
+ 
+         <div class="subject-heading__title">
+             <p class="eyebrow">
+                 EXHIBIT 01 · CASE FILE 001
+             </p>
+ 
+             <h2 id="room-02-title">
+                SUBJECT OF INTEREST
+             </h2>
+ 
+            
+         </div>
+ 
+         <div class="subject-case-stamp">
+             <span>CASE STATUS</span>
+             <strong>ONGOING</strong>
+             <small>FILE 001</small>
+         </div>
+ 
+     </header>
+ 
+ 
+     <!-- =================================================
+          ONE FIXED INVESTIGATION BOARD
+          ================================================= -->
+     <div class="subject-board">
+ 
+         <div class="subject-board__texture"></div>
+ 
+ 
+         <!-- =================================================
+              RED STRING
+              ================================================= -->
+         <svg
+             class="subject-string"
+             viewBox="0 0 1400 650"
+             preserveAspectRatio="none"
+             aria-hidden="true"
+         >
+             <!-- photo 01 → case note -->
+             <path d="M 390 250 C 500 290, 585 300, 700 330" />
+ 
+             <!-- photo 01 → date -->
+             <path d="M 410 220 C 530 160, 700 155, 825 180" />
+ 
+             <!-- photo 02 → evidence -->
+             <path d="M 1030 255 C 980 330, 930 360, 860 390" />
+ 
+             <!-- photo 02 → handwritten confession -->
+             <path d="M 1060 280 C 1120 350, 1125 430, 1060 500" />
+         </svg>
+ 
+ 
+         <!-- =================================================
+              PHOTO 01 — MAIN
+              ================================================= -->
+         <button
+             aria-label="Open main subject photograph"
+             class="gallery-frame gallery-frame--hero photo-trigger subject-photo subject-photo--main"
+             data-caption="Somehow you make ordinary moments look better."
+             data-image="assets/images/photo-01.jpg"
+             data-title="EVIDENCE A — UNTITLED / 2026"
+             type="button"
+         >
+ 
+             <span class="subject-photo__pin"></span>
+ 
+             <span class="gallery-frame__image-wrap">
+                 <img
+                     alt="Ali"
+                     loading="eager"
+                     src="assets/images/photo-01.jpg"
+                 />
+             </span>
+ 
+             <span class="gallery-frame__label">
+                 <strong>EVIDENCE A — SUBJECT UNDER OBSERVATION / 2026</strong>
+ 
+                 <small>
+                    Repeated viewing has failed to produce a reasonable explanation for why you look this good.
+                 </small>
+             </span>
+ 
+         </button>
+ 
+ 
+         <!-- =================================================
+              PHOTO 02 — SMALL
+              ================================================= -->
+         <button
+             aria-label="Open second subject photograph"
+             class="gallery-frame gallery-frame--portrait photo-trigger subject-photo subject-photo--secondary"
+             data-caption="My camera roll has a suspicious amount of evidence."
+             data-image="assets/images/photo-02.jpg"
+             data-title="EVIDENCE B — STUDY NO. 04"
+             type="button"
+         >
+ 
+             <span class="subject-photo__pin"></span>
+ 
+             <span class="gallery-frame__image-wrap">
+                 <img
+                     alt="Ali"
+                     loading="lazy"
+                     src="assets/images/photo-02.jpg"
+                 />
+             </span>
+ 
+             <span class="gallery-frame__label">
+                 <strong>EVIDENCE B · STUDY NO. 04</strong>
+ 
+                 <small>
+                     Kept for obvious reasons.
+                 </small>
+             </span>
+ 
+         </button>
+ 
+ 
+         <!-- =================================================
+              NEWSPAPER CLIPPING
+              ================================================= -->
+         <article class="subject-newspaper">
+ 
+             <div class="subject-newspaper__masthead">
+                 THE DAILY OBSERVER
+                 <span>PRIVATE EDITION · 001</span>
+             </div>
+ 
+             <div class="subject-newspaper__headline">
+                 <small>EXCLUSIVE REPORT</small>
+ 
+                 <h3>
+                     REPORTEDLY<br>
+                     TOO GOOD-LOOKING<br>
+                     TO IGNORE
+                 </h3>
+             </div>
+ 
+             <div class="subject-newspaper__columns">
+ 
+                 <p>
+                     Witnesses describe the situation as
+                     “distracting”, “slightly ridiculous”
+                     and “not improving with time.”
+                 </p>
+ 
+                 <p>
+                     Investigators confirm that repeated
+                     observation has produced no useful
+                     conclusions.
+                 </p>
+ 
+             </div>
+ 
+             <div class="subject-newspaper__footer">
+                 REF. 001 / A
+                 <span>NO FURTHER COMMENT</span>
+             </div>
+ 
+         </article>
+ 
+ 
+         <!-- =================================================
+              DATE NOTE
+              ================================================= -->
+         <article class="subject-date-card">
+ 
+             <span class="subject-card__pin"></span>
+ 
+             <small>CASE OPENED</small>
+ 
+             <strong>
+                 15 SEP
+             </strong>
+ 
+             <span>
+                 NO CLOSURE DATE
+             </span>
+ 
+         </article>
+ 
+ 
+         <!-- =================================================
+              HANDWRITTEN NOTE
+              ================================================= -->
+         <article class="subject-hand-note">
+ 
+             <span class="subject-note__tape"></span>
+ 
+             <span class="subject-note__label">
+                 INVESTIGATOR'S PERSONAL NOTE
+             </span>
+ 
+             <p>
+                 Why do I keep<br>
+                 looking at this?
+             </p>
+ 
+             <small>
+                 this is becoming a problem.
+             </small>
+ 
+         </article>
+ 
+ 
+         <article class="subject-case-note">
+            <span class="subject-card__pin"></span>
+        
+            <header>
+                <span>CASE NOTE · 01 — INVESTIGATOR'S PERSONAL NOTE</span>
+            </header>
+        
+            <p>
+                Reviewed the evidence again tonight. Conclusion unchanged:
+                it should genuinely be illegal to look this good in every
+                single photograph. Motive remains "him, apparently."
+                Investigation to continue indefinitely.
+            </p>
+        
+            <footer>
+                — The Investigator
+            </footer>
+        </article>
+ 
+        
+ 
+         <!-- =================================================
+              FINGERPRINT CARD
+              ================================================= -->
+         <article class="subject-fingerprint-card">
+ 
+             <span class="subject-card__pin"></span>
+ 
+             <small>
+                 FORENSIC COMPARISON
+             </small>
+ 
+             <strong>
+                 TRACE EVIDENCE
+             </strong>
+ 
+             <div class="fingerprints">
+ 
+                 <span class="fingerprint fingerprint--one"></span>
+                 <span class="fingerprint fingerprint--two"></span>
+                 <span class="fingerprint fingerprint--three"></span>
+ 
+             </div>
+ 
+             <p>
+                 Subject left fingerprints<br>
+                 everywhere.
+             </p>
+ 
+         </article>
+ 
+ 
+         <!-- =================================================
+              HAND PRINT
+              ================================================= -->
+         <div
+             aria-hidden="true"
+             class="subject-handprint"
+         >
+ 
+             <span class="handprint__finger handprint__finger--one"></span>
+             <span class="handprint__finger handprint__finger--two"></span>
+             <span class="handprint__finger handprint__finger--three"></span>
+             <span class="handprint__finger handprint__finger--four"></span>
+             <span class="handprint__finger handprint__finger--five"></span>
+ 
+             <span class="handprint__palm"></span>
+ 
+         </div>
+ 
+ 
+         
+ 
+ 
+         <!-- =================================================
+              RED CIRCLE / ANNOTATION
+              ================================================= -->
+         <div
+             aria-hidden="true"
+             class="subject-red-circle"
+         >
+           
+         </div>
+ 
+ 
+         <!-- =================================================
+              SMALL PAPER STRIP
+              ================================================= -->
+         <div class="subject-paper-strip">
+ 
+             <span>
+                 FILED UNDER
+             </span>
+ 
+             <strong>
+                 OBSESSION
+             </strong>
+ 
+             <small>
+                 STATUS: UNRESOLVED
+             </small>
+ 
+         </div>
+ 
+ 
+         <!-- =================================================
+              FINAL HANDWRITTEN LINE
+              ================================================= -->
+         <div class="subject-confession">
+ 
+             <span>
+                 CASE NOTE · 03
+             </span>
+ 
+             <p>
+                 It's a crime<br>
+                 to be this handsome.
+             </p>
+ 
+         </div>
+ 
+ 
+         
+ 
+ 
+     <!-- =================================================
+          NAVIGATION
+          ================================================= -->
+     <div class="subject-navigation">
+ 
+         <button
+             class="exhibition-button room-prev"
+             data-prev-room="01"
+             type="button"
+         >
+             <span aria-hidden="true">←</span>
+             <span>PREVIOUS</span>
+         </button>
+ 
+         <div class="subject-navigation__status">
+             <span>CASE FILE 001</span>
+             <strong>ONGOING</strong>
+         </div>
+ 
+         <button
+             class="exhibition-button room-next"
+             data-next-room="03"
+             type="button"
+         >
+             <span>CONTINUE TO EXHIBIT 02</span>
+             <span aria-hidden="true">→</span>
+         </button>
+ 
+     </div>
+ 
+ 
+     <!-- =================================================
+          EXISTING LIGHTBOX
+          KEEP THIS FOR YOUR CURRENT JAVASCRIPT
+          ================================================= -->
+     <div
+         aria-hidden="true"
+         class="lightbox"
+         id="photo-lightbox"
+     >
+ 
+         <div class="lightbox__backdrop"></div>
+ 
+         <div
+             aria-labelledby="lightbox-title"
+             aria-modal="true"
+             class="lightbox__content"
+             role="dialog"
+         >
+ 
+             <button
+                 aria-label="Close photograph"
+                 class="lightbox__close"
+                 id="lightbox-close"
+                 type="button"
+             >
+                 CLOSE
+             </button>
+ 
+             <div class="lightbox__image-wrap">
+                 <img
+                     alt=""
+                     id="lightbox-image"
+                     src=""
+                 />
+             </div>
+ 
+             <div class="lightbox__caption">
+ 
+                 <p
+                     class="lightbox__title"
+                     id="lightbox-title"
+                 ></p>
+ 
+                 <p
+                     class="lightbox__text"
+                     id="lightbox-caption"
+                 ></p>
+ 
+             </div>
+ 
+         </div>
+ 
+     </div>
+ 
+ </section>
+<!-- =================================================
+                 ROOM 03 — THE LITTLE THINGS
+                 ================================================= -->
+<section aria-hidden="true" aria-labelledby="room-03-title" class="room room--desk" data-room="03" id="room-03">
+<div class="desk-room__background"></div>
+<header class="room-heading room-heading--desk">
+<div>
+<p class="eyebrow">
+                            EXHIBIT 02
+                        </p>
+<h2 id="room-03-title">
+                            THE LITTLE THINGS
+                        </h2>
+</div>
+<p class="room-heading__description">
+                        Things worth opening.
+                    </p>
+</header>
+<div aria-label="Personal desk installation" class="desk" id="desk">
+<div class="desk__surface"></div>
+<!-- DESK LAMP -->
+<div aria-hidden="true" class="desk-lamp">
+<div class="desk-lamp__shade"></div>
+<div class="desk-lamp__stem"></div>
+<div class="desk-lamp__base"></div>
+</div>
+<!-- PHOTO -->
+<button aria-label="Open photograph" class="desk-object desk-photo" data-object="photo" id="desk-photo" type="button">
+<span class="desk-photo__image">
+<img alt="Ali" loading="lazy" src="assets/images/photo-05.jpg"/>
+</span>
+<span class="desk-photo__back">
+    Between the pages,
+    I’d keep a picture of you,
+    A little moment
+    I’d want to keep.
+    
+    And someday, when the book opens,
+    there you’ll be,
+    in one of my favourite places.
+    
+                        </span>
+</button>
+<!-- ENVELOPE -->
+<button aria-label="Open envelope" class="desk-object envelope" data-object="envelope" id="desk-envelope" type="button">
+<span class="envelope__front">
+<span class="envelope__mark">A</span>
+</span>
+<span class="envelope__letter">
+    <strong>A few things about you I can’t help but notice…</strong> <span>
+        You make being effortlessly attractive look unfairly easy. </span>
+        
+</button>
+<!-- NOTEBOOK -->
+<button aria-label="Open notebook" class="desk-object notebook" data-object="notebook" id="desk-notebook" type="button">
+<span class="notebook__cover">
+<span class="notebook__label">
+                                NOTES
+                            </span>
+<span class="notebook__small-mark">
+                                01
+                            </span>
+</span>
+<span class="notebook__pages">
+    <span>
+        Somehow, you make<br/>
+        everything look better.
+    </span>
+    <span>
+        There’s something<br/>
+        about you I can’t ignore.
+    </span>
+    <span>
+        Consider this officially<br/>
+        noted.
+    </span>
+</span>
+</button>
+<!-- TICKET -->
+<button aria-label="Open ticket" class="desk-object ticket" data-object="ticket" id="desk-ticket" type="button">
+<span class="ticket__top">
+                            ADMIT ONE
+                        </span>
+<span class="ticket__main">
+                            FOR SOMETHING<br/>
+                            WE HAVEN'T<br/>
+                            DONE YET.
+                        </span>
+<span class="ticket__bottom">
+                            NO EXPIRATION
+                        </span>
+</button>
+<!-- KEY -->
+<button aria-label="Inspect key" class="desk-object key-object" data-object="key" id="desk-key" type="button">
+<span class="key-object__ring"></span>
+<span class="key-object__shaft"></span>
+<span class="key-object__teeth"></span>
+<span class="key-object__message">
+                            For a door we haven't found yet.
+                        </span>
+</button>
+<!-- PRESSED FLOWER -->
+<button aria-label="Inspect pressed flower" class="desk-object pressed-flower" data-object="flower" id="desk-flower" type="button">
+<span class="pressed-flower__stem"></span>
+<span class="pressed-flower__petal petal--one"></span>
+<span class="pressed-flower__petal petal--two"></span>
+<span class="pressed-flower__petal petal--three"></span>
+<span class="pressed-flower__petal petal--four"></span>
+<span class="pressed-flower__message">
+                            Some things stay beautiful<br/>
+                            because we remember them.
+                        </span>
+</button>
+<!-- PAPER -->
+<div aria-hidden="true" class="desk-paper">
+<span>
+                            private collection
+                        </span>
+<strong>
+                            ALI
+                        </strong>
+<small>
+                            archive / personal
+                        </small>
+</div>
+</div>
+<div aria-live="polite" class="desk-progress" id="desk-progress">
+<span id="desk-progress-text">
+                        Explore the desk.
+                    </span>
+</div>
+<button class="exhibition-button room-prev" data-prev-room="02" type="button"><span aria-hidden="true">←</span><span>PREVIOUS</span></button>
+<button class="exhibition-button room-next" data-next-room="04" id="desk-continue" type="button" style="display: block !important; opacity: 1 !important; visibility: visible !important; position: fixed !important; right: 7vw !important; bottom: 2rem !important; z-index: 9999 !important;">
+<span>THERE'S MORE — CONTINUE</span>
+<span aria-hidden="true">→</span>
+</button>
+</section>
+<!-- =================================================
+                 ROOM 04 — THE NOTE GALAXY
+                 ================================================= -->
+<section aria-hidden="true" aria-labelledby="room-04-title" class="room room--galaxy" data-room="04" id="room-04">
+<div aria-hidden="true" class="galaxy-canvas" id="galaxy-canvas"></div>
+<div class="galaxy-intro">
+<p class="eyebrow">
+                        EXHIBIT 03
+                    </p>
+<p class="galaxy-intro__line">
+                  Some thoughts are better left floating.
+                    </p>
+<h2 id="room-04-title">
+                        THE NOTE GALAXY
+                    </h2>
+<button class="text-button" id="enter-galaxy" type="button">
+                        ENTER
+                        <span aria-hidden="true">→</span>
+</button>
+</div>
+<div class="galaxy-notes starfield" id="galaxy-notes">
+<!-- ONLY THESE .star ELEMENTS ARE CLICKABLE NOTES -->
+<button aria-label="Discover note 1" class="galaxy-star star" data-category="Soft" data-icon="○" data-message="You probably don't realize how often you make me smile without even trying." data-note="01" style="top:12%; left:18%;">
+</button>
+<button aria-label="Discover note 2" class="galaxy-star star" data-category="Romantic" data-icon="♡" data-message="I wonder how many lovely moments are still waiting for us to have." data-note="02" style="top:22%; left:64%;">
+</button>
+<button aria-label="Discover note 3" class="galaxy-star star" data-category="Funny" data-icon="—" data-message="I hope you never underestimate how naturally charming you are." data-note="03" style="top:8%; left:44%;">
+</button>
+<button aria-label="Discover note 4" class="galaxy-star star" data-category="Appreciation" data-icon="✦" data-message="I have a feeling we’re going to have some very silly memories someday." data-note="04" style="top:35%; left:8%;">
+</button>
+<button aria-label="Discover note 5" class="galaxy-star star" data-category="Random" data-icon="·" data-message="There are so many little things I’d love to discover about you, slowly." data-note="05" style="top:48%; left:78%;">
+</button>
+<button aria-label="Discover note 6" class="galaxy-star star" data-category="Future" data-icon="◇" data-message="I hope life gives us plenty of ordinary days that somehow become special." data-note="06" style="top:15%; left:82%;">
+</button>
+<button aria-label="Discover note 7" class="galaxy-star star" data-category="Soft" data-icon="○" data-message="I’m curious about all the stories you haven’t told me yet." data-note="07" style="top:60%; left:20%;">
+</button>
+<button aria-label="Discover note 8" class="galaxy-star star" data-category="Romantic" data-icon="♡" data-message="I like imagining a future filled with tiny moments we haven’t lived yet." data-note="08" style="top:55%; left:50%;">
+</button>
+<button aria-label="Discover note 9" class="galaxy-star star" data-category="Funny" data-icon="—" data-message="I keep a mental list of things to tell you." data-note="09" style="top:70%; left:65%;">
+</button>
+<button aria-label="Discover note 10" class="galaxy-star star" data-category="Appreciation" data-icon="✦" data-message="Someday, I hope we have a collection of memories that only make sense to us." data-note="10" style="top:28%; left:30%;">
+</button>
+<button aria-label="Discover note 11" class="galaxy-star star" data-category="Random" data-icon="·" data-message="I don't say this enough, so here it is in a star instead,I’m quietly grateful that somewhere in this huge world, you exist." data-note="11" style="top:80%; left:12%;">
+</button>
+<button aria-label="Discover note 12" class="galaxy-star star" data-category="Soft" data-icon="○" data-message="There's a version of my future where you're just always there. I like that version." data-note="12" style="top:40%; left:90%;">
+</button>
+<button aria-label="Discover note 13" class="galaxy-star star" data-category="Future" data-icon="◇" data-message="You listen in a way that makes me feel like I matter." data-note="13" style="top:65%; left:38%;">
+</button>
+<button aria-label="Discover note 14" class="galaxy-star star" data-category="Romantic" data-icon="♡" data-message="I like how easy it is to talk to you about nothing at all." data-note="14" style="top:10%; left:60%;">
+</button>
+<button aria-label="Discover note 15" class="galaxy-star star" data-category="Funny" data-icon="—" data-message="You're kind of impossible not to like. Just a fact." data-note="15" style="top:85%; left:55%;">
+</button>
+<button aria-label="Discover note 16" class="galaxy-star star" data-category="Appreciation" data-icon="✦" data-message="I wonder what our first completely ordinary day together will be like." data-note="16" style="top:50%; left:5%;">
+</button>
+<button aria-label="Discover note 17" class="galaxy-star star" data-category="Random" data-icon="·" data-message="Happy birthday. I hope this next year is especially kind to you.." data-note="17" style="top:75%; left:80%;">
+</button>
+<button aria-label="Discover note 18" class="galaxy-star star" data-category="Soft" data-icon="○" data-message="This is me, quietly, saying I'm glad you exist." data-note="18" style="top:30%; left:70%;">
+</button>
+<button aria-label="Discover note 19" class="galaxy-star star" data-category="Future" data-icon="◇" data-message="One day I'll tell you all of these in person instead of hiding them in stars." data-note="19" style="top:5%; left:25%;">
+</button>
+<button aria-label="Discover note 20" class="galaxy-star star" data-category="Romantic" data-icon="♡" data-message="Happy birthday. I wonder what tiny things about you I’ll end up remembering most." data-note="20" style="top:90%; left:35%;">
+</button>
+</div>
+<button class="exhibition-button room-prev" data-prev-room="03" type="button"><span aria-hidden="true">←</span><span>PREVIOUS</span></button>
+<div aria-live="polite" class="galaxy-progress" id="galaxy-progress">
+<span id="galaxy-progress-count">
+                        0 / 20
+                    </span>
+<span>
+                        NOTES DISCOVERED
+                    </span>
+</div>
+<!-- GALAXY NOTE MODAL -->
+<div aria-hidden="true" class="note-modal" id="note-modal">
+<div class="note-modal__backdrop"></div>
+<div aria-modal="true" class="note-modal__content" role="dialog">
+<button aria-label="Close note" class="note-modal__close" id="note-modal-close" type="button">
+                            CLOSE
+                        </button>
+<p class="note-modal__icon" id="note-modal-icon">
+                            ○
+                        </p>
+
+<p class="note-modal__message" id="note-modal-message"></p>
+</div>
+</div>
+<div aria-hidden="true" class="galaxy-complete" id="galaxy-complete"><p id="galaxy-complete-title"></p><p class="galaxy-complete-sub" id="galaxy-complete-sub"></p><button class="exhibition-button galaxy-continue" data-next-room="05" type="button"><span>CONTINUE</span><span aria-hidden="true">→</span></button></div>
+</section>
+<!-- =================================================
+                 ROOM 05 — THE PLAYROOM
+                 ================================================= -->
+<!-- =================================================
+                 ROOM 06 — NOT YET
+                 ================================================= -->
+<section aria-hidden="true" aria-labelledby="room-05-title" class="room room--future" data-room="05" id="room-05">
+<div class="future__background"></div>
+<header class="room-heading room-heading--future">
+<div>
+<p class="eyebrow">
+                            EXHIBIT 05
+                        </p>
+<h2 id="room-06-title">
+                            THINGS WE HAVEN'T<br/>
+                            EXPERIENCED YET
+                        </h2>
+</div>
+<p class="room-heading__description">
+                        Some of my favorite memories are still<br/>
+                        waiting somewhere in the future.
+                    </p>
+</header>
+<div class="future-archive" id="future-archive">
+<!-- FUTURE MEMORY 01 -->
+<button class="future-frame future-frame--01" data-memory="first-coffee" type="button">
+<span class="future-frame__visual future-visual--coffee">
+<span class="coffee-table"></span>
+<span class="coffee-cup coffee-cup--one"></span>
+<span class="coffee-cup coffee-cup--two"></span>
+<span class="coffee-chair coffee-chair--one"></span>
+<span class="coffee-chair coffee-chair--two"></span>
+</span>
+<span class="future-frame__label">
+<strong>FIRST COFFEE</strong>
+<small>Not happened yet.</small>
+</span>
+</button>
+<!-- FUTURE MEMORY 02 -->
+<button class="future-frame future-frame--02" data-memory="first-trip" type="button">
+<span class="future-frame__visual future-visual--trip">
+<span class="trip-window"></span>
+<span class="trip-suitcase"></span>
+<span class="trip-ticket trip-ticket--one"></span>
+<span class="trip-ticket trip-ticket--two"></span>
+</span>
+<span class="future-frame__label">
+<strong>FIRST TRIP</strong>
+<small>Destination unknown.</small>
+</span>
+</button>
+<!-- FUTURE MEMORY 03 -->
+<button class="future-frame future-frame--03" data-memory="first-sunrise" type="button">
+<span class="future-frame__visual future-visual--sunrise">
+<span class="sunrise-horizon"></span>
+<span class="sunrise-seat sunrise-seat--one"></span>
+<span class="sunrise-seat sunrise-seat--two"></span>
+</span>
+<span class="future-frame__label">
+<strong>FIRST SUNRISE</strong>
+<small>Waiting for us.</small>
+</span>
+</button>
+<!-- FUTURE MEMORY 04 -->
+<button class="future-frame future-frame--04" data-memory="rainy-day" type="button">
+<span class="future-frame__visual future-visual--rain">
+<span class="rain-window"></span>
+<span class="rain-streak rain-streak--one"></span>
+<span class="rain-streak rain-streak--two"></span>
+<span class="rain-streak rain-streak--three"></span>
+<span class="rain-umbrella rain-umbrella--one"></span>
+<span class="rain-umbrella rain-umbrella--two"></span>
+</span>
+<span class="future-frame__label">
+<strong>A RANDOM RAINY DAY</strong>
+<small>No plans. Hopefully.</small>
+</span>
+</button>
+<!-- FUTURE MEMORY 05 -->
+<button class="future-frame future-frame--05" data-memory="somewhere-new" type="button">
+<span class="future-frame__visual future-visual--unknown">
+<span class="unknown-road"></span>
+<span class="unknown-window"></span>
+<span class="unknown-seat"></span>
+</span>
+<span class="future-frame__label">
+<strong>SOMEWHERE NEW</strong>
+<small>We haven't decided where.</small>
+</span>
+</button>
+</div>
+<!-- FUTURE MEMORY MODAL -->
+<div aria-hidden="true" class="future-modal" id="future-modal">
+<div class="future-modal__backdrop"></div>
+<div aria-labelledby="future-modal-title" aria-modal="true" class="future-modal__content" role="dialog">
+<button aria-label="Close future memory" class="future-modal__close" id="future-modal-close" type="button">
+                            CLOSE
+                        </button>
+<div class="future-modal__visual" id="future-modal-visual"></div>
+<div class="future-modal__copy">
+<p class="eyebrow" id="future-modal-kicker">
+                                FUTURE ARCHIVE
+                            </p>
+<h3 id="future-modal-title">
+                                FIRST COFFEE
+                            </h3>
+<p id="future-modal-text">
+                                Not happened yet.
+                            </p>
+</div>
+</div>
+</div>
+<div class="future-ending">
+<p>
+                        SOME MEMORIES ARE STILL BEING WRITTEN.
+                    </p>
+<button class="exhibition-button room-prev" data-prev-room="04" type="button"><span aria-hidden="true">←</span><span>PREVIOUS</span></button>
+<button class="exhibition-button room-next" data-next-room="06" type="button">
+<span>CONTINUE</span>
+<span aria-hidden="true">→</span>
+</button>
+</div>
+</section>
+<!-- =================================================
+                 ROOM 07 — THE ARCHIVE
+                 ================================================= -->
+<section aria-labelledby="room-06-title" class="room room--archive claude-archive-room" data-room="06" id="room-06">
+<div class="archive-room">
+<header class="exhibit-header">
+<p class="exhibit-kicker">EXHIBIT 06</p>
+<h2 class="exhibit-title" id="room-06-title">MY FAVORITE CORNER // 001—∞</h2>
+</header>
+<div class="archive-wall" id="archive-wall">
+<!-- Repeatable pinned/taped photo units. Add more by duplicating .archive-item -->
+<div class="archive-item item-1" data-entry="037" data-note="This one makes me smile every time. Cute. Just really, really cute.">
+<img alt="" onerror="this.closest('.archive-item').classList.add('img-missing')" src="assets/images/photo-07.jpg"/>
+</div>
+<div class="archive-item item-2" data-entry="012" data-note="Kept for obvious reasons.">
+<img alt="" onerror="this.closest('.archive-item').classList.add('img-missing')" src="assets/images/photo-08.jpg"/>
+</div>
+<div class="archive-item item-3" data-entry="058" data-note="Unposed. Unbothered. Unfairly good-looking.">
+<img alt="" onerror="this.closest('.archive-item').classList.add('img-missing')" src="assets/images/photo-09.jpg"/>
+</div>
+<div class="archive-item item-4" data-entry="003" data-note="Candid. Chaotic. Correct.">
+<img alt="" onerror="this.closest('.archive-item').classList.add('img-missing')" src="assets/images/photo-10.jpg"/>
+</div>
+<div class="archive-item item-5" data-entry="091" data-note="Filed under how did I get this lucky.">
+<img alt="" onerror="this.closest('.archive-item').classList.add('img-missing')" src="assets/images/photo-11.jpg"/>
+</div>
+<div class="archive-item item-6" data-entry="044" data-note="Kept for scientific purposes. The science is: you're cute."">
+<img alt="" onerror="this.closest('.archive-item').classList.add('img-missing')" src="assets/images/photo-12.jpg"/>
+</div>
+<div class="archive-item item-7" data-entry="019" data-note="Cute enough to save forever.">
+<img alt="" onerror="this.closest('.archive-item').classList.add('img-missing')" src="assets/images/photo-13.jpg"/>
+</div>
+<div class="archive-item item-8" data-entry="066" data-note="I zoomed in more than once. That's the whole caption.">
+<img alt="" onerror="this.closest('.archive-item').classList.add('img-missing')" src="assets/images/photo-14.jpg"/>
+</div>
+</div>
+<button class="exhibition-button room-prev" data-prev-room="05" type="button"><span aria-hidden="true">←</span><span>PREVIOUS</span></button>
+<button class="exhibition-button room-next archive-continue" data-next-room="07" type="button"><span>CONTINUE TO EXHIBIT 07</span><span aria-hidden="true">→</span></button>
+</div>
+<!-- Archive lightbox -->
+<div class="archive-lightbox" id="archive-lightbox">
+<button class="archive-lightbox-close" id="archive-lightbox-close">✕</button>
+<div class="archive-lightbox-polaroid">
+<img alt="" id="archive-lightbox-img" src=""/>
+<div class="archive-lightbox-polaroid-caption">
+<p class="archive-entry-label" id="archive-entry-label"></p>
+<p class="archive-entry-note" id="archive-entry-note"></p>
+</div>
+</div>
+</div>
+</section>
+<!-- =================================================
+                 ROOM 08 — OUR STORY
+                 ================================================= -->
+<section aria-hidden="true" aria-labelledby="room-07-title" class="room room--story" data-room="07" id="room-07">
+<div class="story__background"></div>
+<div class="story__content">
+<p class="eyebrow">
+                        EXHIBIT 07
+                    </p>
+<p class="story__intro">
+                        Some things are better<br/>
+                        read than displayed.
+                    </p>
+<div class="story__divider"></div>
+<h2 id="room-08-title">
+                        OUR STORY
+                    </h2>
+<!--
+                        Replace ONLY the URL value below when the
+                        separate Storybook project is ready.
+                    -->
+                    <div class="story__actions">
+                        <button class="exhibition-button room-prev room-prev--story" data-prev-room="06" type="button">
+                            <span aria-hidden="true">←</span>
+                            <span>PREVIOUS</span>
+                        </button>
+                    
+                        <a class="exhibition-button exhibition-button--link open-story"
+                           href="https://our-story-magazine.vercel.app/"
+                           id="storybook-link"
+                           rel="noopener noreferrer"
+                           target="_blank">
+                            <span>OPEN OUR STORY</span>
+                            <span aria-hidden="true">→</span>
+                        </a>
+                    
+                        <button class="exhibition-button story-continue" data-next-room="08" type="button">
+                            <span>CONTINUE THROUGH THE EXHIBITION</span>
+                            <span aria-hidden="true">→</span>
+                        </button>
+                    </div>
+</section>
+<!-- =================================================
+                 ROOM 09 — THE EXHIBITION CLOSES
+                 ================================================= -->
+<section aria-labelledby="room-08-title" class="room room--final claude-final-room" data-room="08" id="room-08">
+<div class="final-room">
+<div class="final-echo" id="final-echo"></div>
+<p class="final-line fl-1">You've reached the end.</p>
+<p class="final-line fl-2">But I don't think this exhibition is finished.</p>
+<p class="final-line fl-3">Because there are still so many things<br/>I haven't shown you.</p>
+<p class="final-line fl-4 final-title">HAPPY BIRTHDAY, ALI <span class="heart">♡</span></p>
+<p class="final-line fl-5">This collection is still growing.</p>
+<p class="final-line fl-6 final-tbc">TO BE CONTINUED...</p>
+<div class="final-song" id="final-song">
+<p class="final-line fl-7 final-song__eyebrow">One last little thing</p>
+<p class="final-line fl-8 final-song__body">
+    If you’d like to stay with these words<br/>
+    a little longer,<br/>
+    they’re all here waiting for you.
+</p>
+
+<button class="final-line fl-10 final-song__trigger" id="final-song-trigger" type="button">
+<span class="final-song__note" aria-hidden="true">♫</span>
+<span>Listen to the whole story</span>
+</button>
+<div class="final-song__player" hidden="" id="final-song-player">
+<audio id="final-song-audio" preload="none">
+<source src="assets/audio/full-birthday-song.mp3" type="audio/mpeg">
+</audio>
+<button aria-label="Play the full song" class="final-song__playpause" id="final-song-playpause" type="button">
+<span aria-hidden="true" class="final-song__playpause-icon" id="final-song-playpause-icon"></span>
+</button>
+<div class="final-song__track">
+<div aria-label="Song progress" aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" class="final-song__progress" id="final-song-progress" role="slider" tabindex="0">
+<div class="final-song__progress-fill" id="final-song-progress-fill"></div>
+</div>
+<div class="final-song__time">
+<span id="final-song-current">0:00</span>
+<span class="final-song__time-sep">/</span>
+<span id="final-song-duration">0:00</span>
+</div>
+</div>
+</div>
+</div>
+<button class="exhibition-button room-prev room-prev--final" data-prev-room="07" type="button"><span aria-hidden="true">←</span><span>PREVIOUS</span></button>
+</div>
+</section>
+</main>
+<!-- =====================================================
+             GLOBAL TRANSITION LAYER
+             ===================================================== -->
+<div aria-hidden="true" class="transition-layer" id="transition-layer">
+<div class="transition-layer__curtain"></div>
+</div>
+<!-- =====================================================
+             SCREEN READER / STATUS MESSAGE
+             ===================================================== -->
+<div aria-atomic="true" aria-live="polite" class="visually-hidden" id="app-status"></div>
+</div>
+<!-- =========================================================
+         JAVASCRIPT
+         ========================================================= -->
+<script src="script.js"></script>
+</body>
+</html>
